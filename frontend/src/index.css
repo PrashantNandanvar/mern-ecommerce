@@ -15,7 +15,8 @@ main {
   flex: 1;
 }
 
-.btn-primary {
+.btn-primary,
+.btn-outline-primary {
   background-color: #ffa024;
   color: #000;
   border: #000;

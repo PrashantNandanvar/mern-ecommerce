@@ -24,6 +24,7 @@ import ProfileScreen from "./screens/ProfileScreen";
 import Button from "react-bootstrap/esm/Button";
 import { getError } from "./utils";
 import axios from "axios";
+import SearchBox from "./components/SearchBox";
 
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
@@ -69,7 +70,6 @@ function App() {
                 variant="dark"
                 onClick={() => setSidebarIsOpen(!sidebarIsOpen)}
               >
-                {" "}
                 <i className="fas fa-bars"></i>
               </Button>
               <LinkContainer to="/">
@@ -77,6 +77,7 @@ function App() {
               </LinkContainer>
               <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
+                <SearchBox />
                 <Nav className="me-auto w-100 justify-content-end">
                   <Link to="/cart" className="nav-link">
                     Cart
@@ -120,7 +121,7 @@ function App() {
               : "side-navbar d-flex justify-content-between flex-wrap flex-column"
           }
         >
-          <Nav className="flex-xolumn text-white w-100 p-2">
+          <Nav className="flex-column text-white w-100 p-2">
             <Nav.Item>
               <strong>Categories</strong>
             </Nav.Item>
