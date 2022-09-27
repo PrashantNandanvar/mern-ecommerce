@@ -26,7 +26,7 @@ import { getError } from "./utils";
 import axios from "axios";
 import SearchBox from "./components/SearchBox";
 import SearchScreen from "./screens/SearchScreen";
-import ProductedRoute from "./components/ProtectedRoute";
+import ProtectedRoute from "./components/ProtectedRoute";
 import DashboardScreen from "./screens/DashboardScreen";
 import AdminRoute from "./components/AdminRoute";
 
@@ -168,9 +168,9 @@ function App() {
               <Route
                 path="/profile"
                 element={
-                  <ProductedRoute>
+                  <ProtectedRoute>
                     <ProfileScreen />
-                  </ProductedRoute>
+                  </ProtectedRoute>
                 }
               />
               <Route path="/shipping" element={<ShippingAddressScreen />} />
@@ -179,17 +179,17 @@ function App() {
               <Route
                 path="/order/:id"
                 element={
-                  <ProductedRoute>
+                  <ProtectedRoute>
                     <OrderScreen />
-                  </ProductedRoute>
+                  </ProtectedRoute>
                 }
               />
               <Route
                 path="/orderhistory"
                 element={
-                  <ProductedRoute>
+                  <ProtectedRoute>
                     <OrderHistoryScreen />
-                  </ProductedRoute>
+                  </ProtectedRoute>
                 }
               />
               {/* Admin Routes */}
