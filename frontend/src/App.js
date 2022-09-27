@@ -26,7 +26,7 @@ import { getError } from "./utils";
 import axios from "axios";
 import SearchBox from "./components/SearchBox";
 import SearchScreen from "./screens/SearchScreen";
-import ProductedRoute from "./components/ProductedRoute";
+import ProductedRoute from "./components/ProtectedRoute";
 import DashboardScreen from "./screens/DashboardScreen";
 import AdminRoute from "./components/AdminRoute";
 
@@ -118,6 +118,9 @@ function App() {
                       <LinkContainer to="/admin/dashboard">
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
+                      <LinkContainer to="/admin/productlist">
+                        <NavDropdown.Item>Products</NavDropdown.Item>
+                      </LinkContainer>
                       <LinkContainer to="/admin/orderlist">
                         <NavDropdown.Item>Orders</NavDropdown.Item>
                       </LinkContainer>
@@ -190,7 +193,15 @@ function App() {
                 }
               />
               {/* Admin Routes */}
-              <Route path="/admin/dashboard" element={<AdminRoute><DashboardScreen/></AdminRoute>}/>
+              <Route
+                path="/admin/dashboard"
+                element={
+                  <AdminRoute>
+                    <DashboardScreen />
+                  </AdminRoute>
+                }
+              ></Route>
+
               <Route path="/" element={<HomeScreen />} />
             </Routes>
           </Container>

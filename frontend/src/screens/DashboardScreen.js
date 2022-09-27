@@ -1,9 +1,5 @@
-import React from 'react'
+import React from 'react';
 
-const DashboardScreen = () => {
-  return (
-    <div>DashboardScreen</div>
-  )
+export default function DashboardScreen() {
+  return <div>DashboardScreen</div>;
 }
-
-export default DashboardScreen
